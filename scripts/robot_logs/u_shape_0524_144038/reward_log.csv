@@ -1,0 +1,1 @@
+episode,step,total_reward,r_progress,r_heading,r_lane,r_wall_soft,r_wall_danger,r_speed_wall,r_time_penalty,r_checkpoint,min_lidar_m,wp_index,x,y,speed_mps,steer_rad

@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <physics type="ode">
+      <real_time_factor>3</real_time_factor>
+      <real_time_update_rate>3000</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+    </physics>
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <!-- ===== STRAIGHT CORRIDOR (20m x 3m) =====
+         Inner bounds: x[-1, 17], y[-1.5, 1.5]
+         Robot spawns near x=0.  Goal at x=16.
+         Waypoints: [5,0], [10,0], [16,0]
+    ===== -->
+
+    <!-- South outer wall: center (8, -1.75), length 20m -->
+    <model name="wall_south"><static>true</static><pose>8.0 -1.75 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>20.0 0.5 1.0</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>20.0 0.5 1.0</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Brick</name></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- North outer wall: center (8, 1.75) -->
+    <model name="wall_north"><static>true</static><pose>8.0 1.75 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>20.0 0.5 1.0</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>20.0 0.5 1.0</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Brick</name></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- West wall: center (-1.25, 0) -->
+    <model name="wall_west"><static>true</static><pose>-1.25 0.0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.5 4.0 1.0</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.5 4.0 1.0</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Brick</name></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- East wall: center (17.25, 0) -->
+    <model name="wall_east"><static>true</static><pose>17.25 0.0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.5 4.0 1.0</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.5 4.0 1.0</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Brick</name></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Goal marker: green disk at x=16, y=0 -->
+    <model name="goal_marker"><static>true</static><pose>16.0 0.0 0.005 0 0 0</pose>
+      <link name="link">
+        <visual name="vis">
+          <geometry><cylinder><radius>0.8</radius><length>0.01</length></cylinder></geometry>
+          <material><ambient>0 1 0 0.7</ambient><diffuse>0 1 0 0.7</diffuse><emissive>0 0.5 0 1</emissive></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- WP markers (blue) -->
+    <model name="wp1_marker"><static>true</static><pose>5.0 0.0 0.005 0 0 0</pose>
+      <link name="link"><visual name="vis"><geometry><cylinder><radius>0.3</radius><length>0.01</length></cylinder></geometry>
+        <material><ambient>0 0 1 0.5</ambient><diffuse>0 0 1 0.5</diffuse></material></visual></link>
+    </model>
+    <model name="wp2_marker"><static>true</static><pose>10.0 0.0 0.005 0 0 0</pose>
+      <link name="link"><visual name="vis"><geometry><cylinder><radius>0.3</radius><length>0.01</length></cylinder></geometry>
+        <material><ambient>0 0 1 0.5</ambient><diffuse>0 0 1 0.5</diffuse></material></visual></link>
+    </model>
+
+  </world>
+</sdf>

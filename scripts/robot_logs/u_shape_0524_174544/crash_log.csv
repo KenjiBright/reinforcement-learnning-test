@@ -1,0 +1,2 @@
+episode,step,x,y,yaw_deg,speed_mps,steer_rad,min_lidar_m,closest_sector_deg,wp_index,wall_time_s
+0,41,1.959,-1.031,52.5,-1.0,0.35,0.12,75,0,2.3

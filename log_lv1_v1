@@ -1,0 +1,2423 @@
+kenji@kenji-Inspiron-5577:~/Desktop/my_4ws_robot/scripts$ python3 train_lvl1.py
+/home/kenji/.local/lib/python3.10/site-packages/gymnasium/spaces/box.py:236: UserWarning: WARN: Box low's precision lowered by casting to float32, current low.dtype=float64
+  gym.logger.warn(
+/home/kenji/.local/lib/python3.10/site-packages/gymnasium/spaces/box.py:306: UserWarning: WARN: Box high's precision lowered by casting to float32, current high.dtype=float64
+  gym.logger.warn(
+
+[INFO] Nạp bộ não 'brain_lvl1.zip' để rèn luyện tiếp Level 1...
+/home/kenji/.local/lib/python3.10/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run PPO on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+
+--- Bắt đầu huấn luyện LEVEL 1 (100000 bước) ---
+Logging to ./lvl1_logs/PPO_0
+------------------------------
+| time/              |       |
+|    fps             | 236   |
+|    iterations      | 1     |
+|    time_elapsed    | 8     |
+|    total_timesteps | 35423 |
+------------------------------
+-----------------------------------------
+| time/                   |             |
+|    fps                  | 218         |
+|    iterations           | 2           |
+|    time_elapsed         | 18          |
+|    total_timesteps      | 37471       |
+| train/                  |             |
+|    approx_kl            | 0.005685789 |
+|    clip_fraction        | 0.0478      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -2.7        |
+|    explained_variance   | -0.0497     |
+|    learning_rate        | 0.0003      |
+|    loss                 | 0.0135      |
+|    n_updates            | 170         |
+|    policy_gradient_loss | -4.19e-05   |
+|    std                  | 0.938       |
+|    value_loss           | 3.15        |
+-----------------------------------------
+[Timeout] Hết 10 giây. Reset!
+----------------------------------------
+| time/                   |            |
+|    fps                  | 213        |
+|    iterations           | 3          |
+|    time_elapsed         | 28         |
+|    total_timesteps      | 39519      |
+| train/                  |            |
+|    approx_kl            | 0.00728869 |
+|    clip_fraction        | 0.0909     |
+|    clip_range           | 0.2        |
+|    entropy_loss         | -2.71      |
+|    explained_variance   | -0.0241    |
+|    learning_rate        | 0.0003     |
+|    loss                 | 0.0385     |
+|    n_updates            | 180        |
+|    policy_gradient_loss | -0.00138   |
+|    std                  | 0.941      |
+|    value_loss           | 5.52       |
+----------------------------------------
+------------------------------------------
+| time/                   |              |
+|    fps                  | 213          |
+|    iterations           | 4            |
+|    time_elapsed         | 38           |
+|    total_timesteps      | 41567        |
+| train/                  |              |
+|    approx_kl            | 0.0042168647 |
+|    clip_fraction        | 0.0143       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.72        |
+|    explained_variance   | 0.003        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 0.382        |
+|    n_updates            | 190          |
+|    policy_gradient_loss | -0.000121    |
+|    std                  | 0.941        |
+|    value_loss           | 11.1         |
+------------------------------------------
+[Timeout] Hết 10 giây. Reset!
+-----------------------------------------
+| time/                   |             |
+|    fps                  | 211         |
+|    iterations           | 5           |
+|    time_elapsed         | 48          |
+|    total_timesteps      | 43615       |
+| train/                  |             |
+|    approx_kl            | 0.010061575 |
+|    clip_fraction        | 0.0729      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -2.71       |
+|    explained_variance   | 0.831       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 0.25        |
+|    n_updates            | 200         |
+|    policy_gradient_loss | -0.00359    |
+|    std                  | 0.935       |
+|    value_loss           | 3.17        |
+-----------------------------------------
+-----------------------------------------
+| time/                   |             |
+|    fps                  | 212         |
+|    iterations           | 6           |
+|    time_elapsed         | 57          |
+|    total_timesteps      | 45663       |
+| train/                  |             |
+|    approx_kl            | 0.008960858 |
+|    clip_fraction        | 0.0693      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -2.71       |
+|    explained_variance   | -0.0209     |
+|    learning_rate        | 0.0003      |
+|    loss                 | 0.141       |
+|    n_updates            | 210         |
+|    policy_gradient_loss | -0.00177    |
+|    std                  | 0.938       |
+|    value_loss           | 7.69        |
+-----------------------------------------
+-----------------------------------------
+| time/                   |             |
+|    fps                  | 212         |
+|    iterations           | 7           |
+|    time_elapsed         | 67          |
+|    total_timesteps      | 47711       |
+| train/                  |             |
+|    approx_kl            | 0.004856806 |
+|    clip_fraction        | 0.0528      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -2.71       |
+|    explained_variance   | -0.00666    |
+|    learning_rate        | 0.0003      |
+|    loss                 | 0.134       |
+|    n_updates            | 220         |
+|    policy_gradient_loss | -4.66e-05   |
+|    std                  | 0.944       |
+|    value_loss           | 0.933       |
+-----------------------------------------
+[Timeout] Hết 10 giây. Reset!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 211          |
+|    iterations           | 8            |
+|    time_elapsed         | 77           |
+|    total_timesteps      | 49759        |
+| train/                  |              |
+|    approx_kl            | 0.0038845919 |
+|    clip_fraction        | 0.0533       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.73        |
+|    explained_variance   | 0.0587       |
+|    learning_rate        | 0.0003       |
+|    loss                 | 0.0201       |
+|    n_updates            | 230          |
+|    policy_gradient_loss | -0.00179     |
+|    std                  | 0.948        |
+|    value_loss           | 0.567        |
+------------------------------------------
+------------------------------------------
+| time/                   |              |
+|    fps                  | 211          |
+|    iterations           | 9            |
+|    time_elapsed         | 87           |
+|    total_timesteps      | 51807        |
+| train/                  |              |
+|    approx_kl            | 0.0013852147 |
+|    clip_fraction        | 0.0294       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.72        |
+|    explained_variance   | 0.0585       |
+|    learning_rate        | 0.0003       |
+|    loss                 | 0.3          |
+|    n_updates            | 240          |
+|    policy_gradient_loss | -0.00106     |
+|    std                  | 0.938        |
+|    value_loss           | 2.21         |
+------------------------------------------
+[Timeout] Hết 10 giây. Reset!
+-----------------------------------------
+| time/                   |             |
+|    fps                  | 211         |
+|    iterations           | 10          |
+|    time_elapsed         | 97          |
+|    total_timesteps      | 53855       |
+| train/                  |             |
+|    approx_kl            | 0.009457242 |
+|    clip_fraction        | 0.0717      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -2.72       |
+|    explained_variance   | 0.0842      |
+|    learning_rate        | 0.0003      |
+|    loss                 | 0.00704     |
+|    n_updates            | 250         |
+|    policy_gradient_loss | -0.00197    |
+|    std                  | 0.948       |
+|    value_loss           | 0.283       |
+-----------------------------------------
+-----------------------------------------
+| time/                   |             |
+|    fps                  | 211         |
+|    iterations           | 11          |
+|    time_elapsed         | 106         |
+|    total_timesteps      | 55903       |
+| train/                  |             |
+|    approx_kl            | 0.007039097 |
+|    clip_fraction        | 0.0286      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -2.73       |
+|    explained_variance   | 0.446       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 0.593       |
+|    n_updates            | 260         |
+|    policy_gradient_loss | -0.00378    |
+|    std                  | 0.948       |
+|    value_loss           | 3.68        |
+-----------------------------------------
+------------------------------------------
+| time/                   |              |
+|    fps                  | 211          |
+|    iterations           | 12           |
+|    time_elapsed         | 116          |
+|    total_timesteps      | 57951        |
+| train/                  |              |
+|    approx_kl            | 0.0030292608 |
+|    clip_fraction        | 0.0407       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.74        |
+|    explained_variance   | 0.794        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 0.00032      |
+|    n_updates            | 270          |
+|    policy_gradient_loss | -0.00105     |
+|    std                  | 0.959        |
+|    value_loss           | 0.444        |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.25m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 182          |
+|    iterations           | 13           |
+|    time_elapsed         | 146          |
+|    total_timesteps      | 59999        |
+| train/                  |              |
+|    approx_kl            | 0.0059995768 |
+|    clip_fraction        | 0.0437       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.75        |
+|    explained_variance   | 0.78         |
+|    learning_rate        | 0.0003       |
+|    loss                 | 0.0111       |
+|    n_updates            | 280          |
+|    policy_gradient_loss | -0.00241     |
+|    std                  | 0.953        |
+|    value_loss           | 0.363        |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.24m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.23m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.23m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.23m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.23m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.23m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.23m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.23m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.23m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.23m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.23m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.23m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.23m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.23m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.23m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.23m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.22m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.22m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.22m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.22m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.22m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.22m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.22m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.22m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.22m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.22m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.22m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.21m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.21m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.21m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.21m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.21m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.21m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.21m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.21m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.21m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.21m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.21m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 163          |
+|    iterations           | 14           |
+|    time_elapsed         | 175          |
+|    total_timesteps      | 62047        |
+| train/                  |              |
+|    approx_kl            | 0.0014989093 |
+|    clip_fraction        | 0.000488     |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.74        |
+|    explained_variance   | 0.204        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 116          |
+|    n_updates            | 290          |
+|    policy_gradient_loss | -0.000659    |
+|    std                  | 0.953        |
+|    value_loss           | 343          |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+-----------------------------------------
+| time/                   |             |
+|    fps                  | 149         |
+|    iterations           | 15          |
+|    time_elapsed         | 205         |
+|    total_timesteps      | 64095       |
+| train/                  |             |
+|    approx_kl            | 0.005822676 |
+|    clip_fraction        | 0.0295      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -2.74       |
+|    explained_variance   | 0.428       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 72.4        |
+|    n_updates            | 300         |
+|    policy_gradient_loss | -0.00394    |
+|    std                  | 0.95        |
+|    value_loss           | 169         |
+-----------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+-----------------------------------------
+| time/                   |             |
+|    fps                  | 139         |
+|    iterations           | 16          |
+|    time_elapsed         | 234         |
+|    total_timesteps      | 66143       |
+| train/                  |             |
+|    approx_kl            | 0.003866983 |
+|    clip_fraction        | 0.0146      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -2.73       |
+|    explained_variance   | 0.46        |
+|    learning_rate        | 0.0003      |
+|    loss                 | 38.9        |
+|    n_updates            | 310         |
+|    policy_gradient_loss | -0.00067    |
+|    std                  | 0.948       |
+|    value_loss           | 105         |
+-----------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+-----------------------------------------
+| time/                   |             |
+|    fps                  | 131         |
+|    iterations           | 17          |
+|    time_elapsed         | 264         |
+|    total_timesteps      | 68191       |
+| train/                  |             |
+|    approx_kl            | 0.005693189 |
+|    clip_fraction        | 0.0354      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -2.73       |
+|    explained_variance   | 0.453       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 31.5        |
+|    n_updates            | 320         |
+|    policy_gradient_loss | -0.00409    |
+|    std                  | 0.946       |
+|    value_loss           | 77.1        |
+-----------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 125          |
+|    iterations           | 18           |
+|    time_elapsed         | 293          |
+|    total_timesteps      | 70239        |
+| train/                  |              |
+|    approx_kl            | 0.0039800983 |
+|    clip_fraction        | 0.0265       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.72        |
+|    explained_variance   | 0.422        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 32.6         |
+|    n_updates            | 330          |
+|    policy_gradient_loss | -0.00061     |
+|    std                  | 0.94         |
+|    value_loss           | 65.5         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 120          |
+|    iterations           | 19           |
+|    time_elapsed         | 323          |
+|    total_timesteps      | 72287        |
+| train/                  |              |
+|    approx_kl            | 0.0068143597 |
+|    clip_fraction        | 0.0642       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.7         |
+|    explained_variance   | 0.395        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 27           |
+|    n_updates            | 340          |
+|    policy_gradient_loss | -0.00403     |
+|    std                  | 0.931        |
+|    value_loss           | 61.6         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 115          |
+|    iterations           | 20           |
+|    time_elapsed         | 353          |
+|    total_timesteps      | 74335        |
+| train/                  |              |
+|    approx_kl            | 0.0040752967 |
+|    clip_fraction        | 0.0352       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.7         |
+|    explained_variance   | 0.408        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 33.7         |
+|    n_updates            | 350          |
+|    policy_gradient_loss | -0.00295     |
+|    std                  | 0.931        |
+|    value_loss           | 59.5         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+-----------------------------------------
+| time/                   |             |
+|    fps                  | 112         |
+|    iterations           | 21          |
+|    time_elapsed         | 382         |
+|    total_timesteps      | 76383       |
+| train/                  |             |
+|    approx_kl            | 0.003621722 |
+|    clip_fraction        | 0.0363      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -2.69       |
+|    explained_variance   | 0.418       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 24.1        |
+|    n_updates            | 360         |
+|    policy_gradient_loss | -0.00257    |
+|    std                  | 0.933       |
+|    value_loss           | 56.7        |
+-----------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 109          |
+|    iterations           | 22           |
+|    time_elapsed         | 412          |
+|    total_timesteps      | 78431        |
+| train/                  |              |
+|    approx_kl            | 0.0055056023 |
+|    clip_fraction        | 0.0523       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.7         |
+|    explained_variance   | 0.46         |
+|    learning_rate        | 0.0003       |
+|    loss                 | 27.7         |
+|    n_updates            | 370          |
+|    policy_gradient_loss | -0.00384     |
+|    std                  | 0.934        |
+|    value_loss           | 54.4         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 106          |
+|    iterations           | 23           |
+|    time_elapsed         | 441          |
+|    total_timesteps      | 80479        |
+| train/                  |              |
+|    approx_kl            | 0.0042865053 |
+|    clip_fraction        | 0.0256       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.7         |
+|    explained_variance   | 0.39         |
+|    learning_rate        | 0.0003       |
+|    loss                 | 27.1         |
+|    n_updates            | 380          |
+|    policy_gradient_loss | 0.000547     |
+|    std                  | 0.932        |
+|    value_loss           | 56.4         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 104          |
+|    iterations           | 24           |
+|    time_elapsed         | 471          |
+|    total_timesteps      | 82527        |
+| train/                  |              |
+|    approx_kl            | 0.0033319588 |
+|    clip_fraction        | 0.0195       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.69        |
+|    explained_variance   | 0.405        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 25.5         |
+|    n_updates            | 390          |
+|    policy_gradient_loss | -0.000817    |
+|    std                  | 0.928        |
+|    value_loss           | 56.1         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+-----------------------------------------
+| time/                   |             |
+|    fps                  | 102         |
+|    iterations           | 25          |
+|    time_elapsed         | 501         |
+|    total_timesteps      | 84575       |
+| train/                  |             |
+|    approx_kl            | 0.005868409 |
+|    clip_fraction        | 0.0383      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -2.67       |
+|    explained_variance   | 0.437       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 27.1        |
+|    n_updates            | 400         |
+|    policy_gradient_loss | -0.00219    |
+|    std                  | 0.913       |
+|    value_loss           | 55.1        |
+-----------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+-----------------------------------------
+| time/                   |             |
+|    fps                  | 100         |
+|    iterations           | 26          |
+|    time_elapsed         | 531         |
+|    total_timesteps      | 86623       |
+| train/                  |             |
+|    approx_kl            | 0.004546985 |
+|    clip_fraction        | 0.0319      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -2.65       |
+|    explained_variance   | 0.443       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 19.3        |
+|    n_updates            | 410         |
+|    policy_gradient_loss | -0.00162    |
+|    std                  | 0.907       |
+|    value_loss           | 54.8        |
+-----------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 98           |
+|    iterations           | 27           |
+|    time_elapsed         | 560          |
+|    total_timesteps      | 88671        |
+| train/                  |              |
+|    approx_kl            | 0.0037853268 |
+|    clip_fraction        | 0.0212       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.64        |
+|    explained_variance   | 0.429        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 31           |
+|    n_updates            | 420          |
+|    policy_gradient_loss | -0.000799    |
+|    std                  | 0.907        |
+|    value_loss           | 54.1         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 97           |
+|    iterations           | 28           |
+|    time_elapsed         | 590          |
+|    total_timesteps      | 90719        |
+| train/                  |              |
+|    approx_kl            | 0.0050247516 |
+|    clip_fraction        | 0.0235       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.65        |
+|    explained_variance   | 0.414        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 30.9         |
+|    n_updates            | 430          |
+|    policy_gradient_loss | -0.00118     |
+|    std                  | 0.914        |
+|    value_loss           | 55.5         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+-----------------------------------------
+| time/                   |             |
+|    fps                  | 95          |
+|    iterations           | 29          |
+|    time_elapsed         | 619         |
+|    total_timesteps      | 92767       |
+| train/                  |             |
+|    approx_kl            | 0.003850347 |
+|    clip_fraction        | 0.0347      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -2.66       |
+|    explained_variance   | 0.43        |
+|    learning_rate        | 0.0003      |
+|    loss                 | 22.9        |
+|    n_updates            | 440         |
+|    policy_gradient_loss | -0.00153    |
+|    std                  | 0.914       |
+|    value_loss           | 54.5        |
+-----------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 94           |
+|    iterations           | 30           |
+|    time_elapsed         | 649          |
+|    total_timesteps      | 94815        |
+| train/                  |              |
+|    approx_kl            | 0.0049374267 |
+|    clip_fraction        | 0.033        |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.66        |
+|    explained_variance   | 0.396        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 26.3         |
+|    n_updates            | 450          |
+|    policy_gradient_loss | -0.00248     |
+|    std                  | 0.915        |
+|    value_loss           | 55.9         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 93           |
+|    iterations           | 31           |
+|    time_elapsed         | 678          |
+|    total_timesteps      | 96863        |
+| train/                  |              |
+|    approx_kl            | 0.0050920174 |
+|    clip_fraction        | 0.0414       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.67        |
+|    explained_variance   | 0.364        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 24.6         |
+|    n_updates            | 460          |
+|    policy_gradient_loss | -0.00234     |
+|    std                  | 0.921        |
+|    value_loss           | 57.6         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 92           |
+|    iterations           | 32           |
+|    time_elapsed         | 708          |
+|    total_timesteps      | 98911        |
+| train/                  |              |
+|    approx_kl            | 0.0045862934 |
+|    clip_fraction        | 0.0279       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.66        |
+|    explained_variance   | 0.39         |
+|    learning_rate        | 0.0003       |
+|    loss                 | 35           |
+|    n_updates            | 470          |
+|    policy_gradient_loss | -0.00151     |
+|    std                  | 0.912        |
+|    value_loss           | 57.9         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 91           |
+|    iterations           | 33           |
+|    time_elapsed         | 738          |
+|    total_timesteps      | 100959       |
+| train/                  |              |
+|    approx_kl            | 0.0038040415 |
+|    clip_fraction        | 0.0282       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.65        |
+|    explained_variance   | 0.44         |
+|    learning_rate        | 0.0003       |
+|    loss                 | 31.7         |
+|    n_updates            | 480          |
+|    policy_gradient_loss | -0.00247     |
+|    std                  | 0.906        |
+|    value_loss           | 55.7         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 90           |
+|    iterations           | 34           |
+|    time_elapsed         | 767          |
+|    total_timesteps      | 103007       |
+| train/                  |              |
+|    approx_kl            | 0.0036790369 |
+|    clip_fraction        | 0.0351       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.64        |
+|    explained_variance   | 0.428        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 25.4         |
+|    n_updates            | 490          |
+|    policy_gradient_loss | -0.000318    |
+|    std                  | 0.909        |
+|    value_loss           | 55.4         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 89           |
+|    iterations           | 35           |
+|    time_elapsed         | 797          |
+|    total_timesteps      | 105055       |
+| train/                  |              |
+|    approx_kl            | 0.0040735323 |
+|    clip_fraction        | 0.0392       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.65        |
+|    explained_variance   | 0.398        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 29.7         |
+|    n_updates            | 500          |
+|    policy_gradient_loss | -0.00284     |
+|    std                  | 0.907        |
+|    value_loss           | 55.8         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 89           |
+|    iterations           | 36           |
+|    time_elapsed         | 826          |
+|    total_timesteps      | 107103       |
+| train/                  |              |
+|    approx_kl            | 0.0034754924 |
+|    clip_fraction        | 0.0223       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.64        |
+|    explained_variance   | 0.389        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 31.4         |
+|    n_updates            | 510          |
+|    policy_gradient_loss | -0.00141     |
+|    std                  | 0.909        |
+|    value_loss           | 57           |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 88           |
+|    iterations           | 37           |
+|    time_elapsed         | 856          |
+|    total_timesteps      | 109151       |
+| train/                  |              |
+|    approx_kl            | 0.0049734134 |
+|    clip_fraction        | 0.0333       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.64        |
+|    explained_variance   | 0.437        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 20.5         |
+|    n_updates            | 520          |
+|    policy_gradient_loss | -0.00134     |
+|    std                  | 0.898        |
+|    value_loss           | 55.2         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 87           |
+|    iterations           | 38           |
+|    time_elapsed         | 886          |
+|    total_timesteps      | 111199       |
+| train/                  |              |
+|    approx_kl            | 0.0036605643 |
+|    clip_fraction        | 0.0371       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.63        |
+|    explained_variance   | 0.413        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 27.5         |
+|    n_updates            | 530          |
+|    policy_gradient_loss | -0.00247     |
+|    std                  | 0.907        |
+|    value_loss           | 55.3         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 87           |
+|    iterations           | 39           |
+|    time_elapsed         | 915          |
+|    total_timesteps      | 113247       |
+| train/                  |              |
+|    approx_kl            | 0.0023987927 |
+|    clip_fraction        | 0.0158       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.65        |
+|    explained_variance   | 0.449        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 20.1         |
+|    n_updates            | 540          |
+|    policy_gradient_loss | -0.000127    |
+|    std                  | 0.912        |
+|    value_loss           | 54           |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 86           |
+|    iterations           | 40           |
+|    time_elapsed         | 945          |
+|    total_timesteps      | 115295       |
+| train/                  |              |
+|    approx_kl            | 0.0051966785 |
+|    clip_fraction        | 0.0332       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.64        |
+|    explained_variance   | 0.396        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 23           |
+|    n_updates            | 550          |
+|    policy_gradient_loss | -0.00146     |
+|    std                  | 0.904        |
+|    value_loss           | 55.6         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 86           |
+|    iterations           | 41           |
+|    time_elapsed         | 974          |
+|    total_timesteps      | 117343       |
+| train/                  |              |
+|    approx_kl            | 0.0029506674 |
+|    clip_fraction        | 0.0178       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.64        |
+|    explained_variance   | 0.42         |
+|    learning_rate        | 0.0003       |
+|    loss                 | 29.8         |
+|    n_updates            | 560          |
+|    policy_gradient_loss | 2.13e-05     |
+|    std                  | 0.907        |
+|    value_loss           | 55.1         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 85           |
+|    iterations           | 42           |
+|    time_elapsed         | 1004         |
+|    total_timesteps      | 119391       |
+| train/                  |              |
+|    approx_kl            | 0.0057942336 |
+|    clip_fraction        | 0.0448       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.64        |
+|    explained_variance   | 0.441        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 21.3         |
+|    n_updates            | 570          |
+|    policy_gradient_loss | -0.00223     |
+|    std                  | 0.906        |
+|    value_loss           | 53.8         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 85           |
+|    iterations           | 43           |
+|    time_elapsed         | 1033         |
+|    total_timesteps      | 121439       |
+| train/                  |              |
+|    approx_kl            | 0.0066623613 |
+|    clip_fraction        | 0.0428       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.64        |
+|    explained_variance   | 0.385        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 23.3         |
+|    n_updates            | 580          |
+|    policy_gradient_loss | -0.00214     |
+|    std                  | 0.906        |
+|    value_loss           | 56.1         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+-----------------------------------------
+| time/                   |             |
+|    fps                  | 84          |
+|    iterations           | 44          |
+|    time_elapsed         | 1063        |
+|    total_timesteps      | 123487      |
+| train/                  |             |
+|    approx_kl            | 0.004983414 |
+|    clip_fraction        | 0.0362      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -2.64       |
+|    explained_variance   | 0.409       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 26          |
+|    n_updates            | 590         |
+|    policy_gradient_loss | -0.00171    |
+|    std                  | 0.903       |
+|    value_loss           | 56          |
+-----------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 84           |
+|    iterations           | 45           |
+|    time_elapsed         | 1093         |
+|    total_timesteps      | 125535       |
+| train/                  |              |
+|    approx_kl            | 0.0046306327 |
+|    clip_fraction        | 0.0421       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.62        |
+|    explained_variance   | 0.448        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 27.6         |
+|    n_updates            | 600          |
+|    policy_gradient_loss | -0.00191     |
+|    std                  | 0.891        |
+|    value_loss           | 54.6         |
+------------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+---------------------------------------
+| time/                   |           |
+|    fps                  | 83        |
+|    iterations           | 46        |
+|    time_elapsed         | 1123      |
+|    total_timesteps      | 127583    |
+| train/                  |           |
+|    approx_kl            | 0.0057063 |
+|    clip_fraction        | 0.0575    |
+|    clip_range           | 0.2       |
+|    entropy_loss         | -2.59     |
+|    explained_variance   | 0.435     |
+|    learning_rate        | 0.0003    |
+|    loss                 | 26.6      |
+|    n_updates            | 610       |
+|    policy_gradient_loss | -0.00119  |
+|    std                  | 0.882     |
+|    value_loss           | 53.6      |
+---------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+-----------------------------------------
+| time/                   |             |
+|    fps                  | 83          |
+|    iterations           | 47          |
+|    time_elapsed         | 1152        |
+|    total_timesteps      | 129631      |
+| train/                  |             |
+|    approx_kl            | 0.003767193 |
+|    clip_fraction        | 0.0316      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -2.59       |
+|    explained_variance   | 0.389       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 34.7        |
+|    n_updates            | 620         |
+|    policy_gradient_loss | -0.00138    |
+|    std                  | 0.885       |
+|    value_loss           | 55.9        |
+-----------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+-----------------------------------------
+| time/                   |             |
+|    fps                  | 83          |
+|    iterations           | 48          |
+|    time_elapsed         | 1182        |
+|    total_timesteps      | 131679      |
+| train/                  |             |
+|    approx_kl            | 0.006831283 |
+|    clip_fraction        | 0.0756      |
+|    clip_range           | 0.2         |
+|    entropy_loss         | -2.58       |
+|    explained_variance   | 0.427       |
+|    learning_rate        | 0.0003      |
+|    loss                 | 25.2        |
+|    n_updates            | 630         |
+|    policy_gradient_loss | -0.00484    |
+|    std                  | 0.88        |
+|    value_loss           | 54          |
+-----------------------------------------
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+[Va chạm] Đâm tường ở 0.20m. TRỪ 100đ!
+------------------------------------------
+| time/                   |              |
+|    fps                  | 82           |
+|    iterations           | 49           |
+|    time_elapsed         | 1211         |
+|    total_timesteps      | 133727       |
+| train/                  |              |
+|    approx_kl            | 0.0032377695 |
+|    clip_fraction        | 0.0183       |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.57        |
+|    explained_variance   | 0.417        |
+|    learning_rate        | 0.0003       |
+|    loss                 | 24           |
+|    n_updates            | 640          |
+|    policy_gradient_loss | -0.000608    |
+|    std                  | 0.875        |
+|    value_loss           | 54.8         |
+------------------------------------------
+[THÀNH CÔNG] Đã lưu bộ não mới vào 'brain_lvl1.zip'.
+

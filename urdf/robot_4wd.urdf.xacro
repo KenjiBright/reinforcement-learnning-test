@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<robot name="robot_4wd" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ── Properties ────────────────────────────────────────────── -->
+  <xacro:property name="chassis_len"    value="0.30"/>
+  <xacro:property name="chassis_width"  value="0.20"/>
+  <xacro:property name="chassis_height" value="0.08"/>
+  <xacro:property name="wheel_radius"   value="0.05"/>
+  <xacro:property name="wheel_thick"    value="0.04"/>
+
+  <!-- ── Inertia helpers ───────────────────────────────────────── -->
+  <xacro:macro name="box_inertia" params="m w l h">
+    <inertial>
+      <mass value="${m}"/>
+      <inertia ixx="${m*(h*h+w*w)/12}" ixy="0" ixz="0"
+               iyy="${m*(l*l+h*h)/12}" iyz="0"
+               izz="${m*(l*l+w*w)/12}"/>
+    </inertial>
+  </xacro:macro>
+
+  <xacro:macro name="cylinder_inertia" params="m r h">
+    <inertial>
+      <mass value="${m}"/>
+      <inertia ixx="${m*(3*r*r+h*h)/12}" ixy="0" ixz="0"
+               iyy="${m*(3*r*r+h*h)/12}" iyz="0"
+               izz="${m*r*r/2}"/>
+    </inertial>
+  </xacro:macro>
+
+  <!-- ── Materials ─────────────────────────────────────────────── -->
+  <material name="blue"><color rgba="0.0 0.2 0.8 1.0"/></material>
+  <material name="black"><color rgba="0.1 0.1 0.1 1.0"/></material>
+  <material name="grey"><color rgba="0.5 0.5 0.5 1.0"/></material>
+
+  <!-- ── Chassis ────────────────────────────────────────────────── -->
+  <link name="chassis">
+    <visual>
+      <geometry><box size="${chassis_len} ${chassis_width} ${chassis_height}"/></geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <geometry><box size="${chassis_len} ${chassis_width} ${chassis_height}"/></geometry>
+    </collision>
+    <xacro:box_inertia m="4.0" w="${chassis_width}" l="${chassis_len}" h="${chassis_height}"/>
+  </link>
+
+  <!-- ── Wheel macro (direct-drive, no steer joint) ────────────── -->
+  <!--  Wheels are directly attached to chassis.
+        Gazebo disables collision between chassis ↔ wheel_link (1-hop).
+        axis xyz="0 1 0" → positive velocity = forward motion.          -->
+  <xacro:macro name="drive_wheel" params="prefix x_pos y_pos">
+    <link name="${prefix}_wheel_link">
+      <visual>
+        <geometry><cylinder radius="${wheel_radius}" length="${wheel_thick}"/></geometry>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <material name="black"/>
+      </visual>
+      <collision>
+        <geometry><cylinder radius="${wheel_radius}" length="${wheel_thick}"/></geometry>
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      </collision>
+      <xacro:cylinder_inertia m="0.8" r="${wheel_radius}" h="${wheel_thick}"/>
+    </link>
+    <joint name="${prefix}_wheel_joint" type="continuous">
+      <parent link="chassis"/>
+      <child  link="${prefix}_wheel_link"/>
+      <origin xyz="${x_pos} ${y_pos} 0" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit effort="10" velocity="25"/>
+      <dynamics damping="0.05" friction="0.1"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:drive_wheel prefix="fl" x_pos=" 0.10" y_pos=" 0.12"/>
+  <xacro:drive_wheel prefix="fr" x_pos=" 0.10" y_pos="-0.12"/>
+  <xacro:drive_wheel prefix="rl" x_pos="-0.10" y_pos=" 0.12"/>
+  <xacro:drive_wheel prefix="rr" x_pos="-0.10" y_pos="-0.12"/>
+
+  <!-- ── LiDAR ──────────────────────────────────────────────────── -->
+  <link name="lidar_link">
+    <visual>
+      <geometry><cylinder radius="0.04" length="0.05"/></geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <geometry><cylinder radius="0.04" length="0.05"/></geometry>
+    </collision>
+    <xacro:cylinder_inertia m="0.2" r="0.04" h="0.05"/>
+  </link>
+  <!-- Mounted on top of chassis, centred -->
+  <joint name="lidar_joint" type="fixed">
+    <parent link="chassis"/>
+    <child  link="lidar_link"/>
+    <origin xyz="0 0 ${chassis_height/2 + 0.025}" rpy="0 0 0"/>
+  </joint>
+
+  <!-- LiDAR sensor plugin (360°, 10 Hz, range 0.12 – 10 m) -->
+  <gazebo reference="lidar_link">
+    <sensor name="lidar" type="ray">
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14159</min_angle>
+            <max_angle>3.14159</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.12</min>
+          <max>10.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+      <plugin name="gazebo_ros_lidar_controller" filename="libgazebo_ros_ray_sensor.so">
+        <ros><remapping>~/out:=scan</remapping></ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+        <frame_name>lidar_link</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- ── ros2_control interfaces ───────────────────────────────── -->
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware><plugin>gazebo_ros2_control/GazeboSystem</plugin></hardware>
+    <joint name="fl_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="velocity"/>
+      <state_interface name="position"/>
+    </joint>
+    <joint name="fr_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="velocity"/>
+      <state_interface name="position"/>
+    </joint>
+    <joint name="rl_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="velocity"/>
+      <state_interface name="position"/>
+    </joint>
+    <joint name="rr_wheel_joint">
+      <command_interface name="velocity"/>
+      <state_interface name="velocity"/>
+      <state_interface name="position"/>
+    </joint>
+  </ros2_control>
+
+  <!-- gazebo_ros2_control plugin – loads controllers_4wd.yaml -->
+  <gazebo>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+      <parameters>/home/kenji/Desktop/my_4ws_robot/config/controllers_4wd.yaml</parameters>
+      <!-- Fetch robot_description from RSP node parameter instead of CLI arg.
+           Avoids "Couldn't parse parameter override rule" error in Humble. -->
+      <robot_param>robot_description</robot_param>
+      <robot_param_node>robot_state_publisher</robot_param_node>
+    </plugin>
+  </gazebo>
+
+  <!-- Ground-truth odometry (topic: /ground_truth) -->
+  <gazebo>
+    <plugin name="gazebo_ros_p3d" filename="libgazebo_ros_p3d.so">
+      <ros>
+        <namespace>/</namespace>
+        <remapping>odom:=/ground_truth</remapping>
+      </ros>
+      <body_name>chassis</body_name>
+      <frame_name>world</frame_name>
+      <update_rate>50.0</update_rate>
+      <xyz_offset>0 0 0</xyz_offset>
+      <rpy_offset>0 0 0</rpy_offset>
+      <gaussian_noise>0.0</gaussian_noise>
+    </plugin>
+  </gazebo>
+
+</robot>

@@ -1,0 +1,176 @@
+<?xml version="1.0" ?>
+<!--
+  maze_4wd_lv2.world  –  L-Shape maze for 4WD robot Level 2
+  ============================================================
+  Layout (top-down, X=right, Y=up):
+
+       x: -2      0          8.5   11.5
+                  ┌──────────┐
+       y: 12      │          │  ← wall_end (top)
+                  │  vertical│
+       y:  1.5    │ corridor │
+           ───────┘          │
+       y: -1.5               │
+           horizontal corridor
+       x: -2      0    8.5  11.5
+
+  Inner dimensions:
+    Horizontal corridor  : x ∈ [-1.75, 11.25], y ∈ [-1.5, 1.5]   (3 m wide)
+    Vertical corridor    : x ∈ [8.5, 11.5],    y ∈ [1.5, 11.75]  (3 m wide)
+
+  Level-2 waypoints (rl_env_4wd.py):
+    WP0 spawn  (0.5,  0.0)
+    WP1        (4.0,  0.0)  blue
+    WP2        (8.0,  0.0)  blue
+    WP3       (10.0,  2.5)  blue  ← corner
+    WP4       (10.0,  6.0)  blue
+    GOAL      (10.0,  9.5)  green
+-->
+<sdf version="1.6">
+  <world name="default">
+
+    <physics type="ode">
+      <real_time_factor>3</real_time_factor>
+      <real_time_update_rate>3000</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+    </physics>
+
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <!-- ── Walls ─────────────────────────────────────────── -->
+
+    <!-- South wall: runs full length of both corridors -->
+    <model name="wall_south">
+      <static>true</static>
+      <pose>4.75 -1.75 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>13.5 0.5 1.0</size></box></geometry></collision>
+        <visual    name="v"><geometry><box><size>13.5 0.5 1.0</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Brick</name></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- North wall of horizontal corridor (stops where vertical opens) -->
+    <model name="wall_north_horiz">
+      <static>true</static>
+      <pose>3.25 1.75 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>10.5 0.5 1.0</size></box></geometry></collision>
+        <visual    name="v"><geometry><box><size>10.5 0.5 1.0</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Brick</name></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- East wall: right side of vertical corridor -->
+    <model name="wall_east">
+      <static>true</static>
+      <pose>11.75 5.0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>0.5 15.5 1.0</size></box></geometry></collision>
+        <visual    name="v"><geometry><box><size>0.5 15.5 1.0</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Brick</name></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- West wall of vertical corridor (inner left side) -->
+    <model name="wall_west_vert">
+      <static>true</static>
+      <pose>8.25 6.875 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>0.5 10.75 1.0</size></box></geometry></collision>
+        <visual    name="v"><geometry><box><size>0.5 10.75 1.0</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Brick</name></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Start cap (west end of horizontal corridor) -->
+    <model name="wall_start">
+      <static>true</static>
+      <pose>-2.0 0.0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>0.5 4.0 1.0</size></box></geometry></collision>
+        <visual    name="v"><geometry><box><size>0.5 4.0 1.0</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Brick</name></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- End cap (top of vertical corridor) -->
+    <model name="wall_end">
+      <static>true</static>
+      <pose>10.0 12.0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>4.0 0.5 1.0</size></box></geometry></collision>
+        <visual    name="v"><geometry><box><size>4.0 0.5 1.0</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Brick</name></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ── Waypoint markers (blue discs) ──────────────────── -->
+
+    <model name="wp1_marker">
+      <static>true</static><pose>4.0 0.0 0.005 0 0 0</pose>
+      <link name="link">
+        <visual name="v"><geometry><cylinder><radius>0.3</radius><length>0.01</length></cylinder></geometry>
+          <material><ambient>0.0 0.3 1.0 0.8</ambient><diffuse>0.0 0.3 1.0 0.8</diffuse>
+            <emissive>0.0 0.1 0.4 1.0</emissive></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wp2_marker">
+      <static>true</static><pose>8.0 0.0 0.005 0 0 0</pose>
+      <link name="link">
+        <visual name="v"><geometry><cylinder><radius>0.3</radius><length>0.01</length></cylinder></geometry>
+          <material><ambient>0.0 0.3 1.0 0.8</ambient><diffuse>0.0 0.3 1.0 0.8</diffuse>
+            <emissive>0.0 0.1 0.4 1.0</emissive></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wp3_marker">
+      <static>true</static><pose>10.0 2.5 0.005 0 0 0</pose>
+      <link name="link">
+        <visual name="v"><geometry><cylinder><radius>0.3</radius><length>0.01</length></cylinder></geometry>
+          <material><ambient>0.0 0.3 1.0 0.8</ambient><diffuse>0.0 0.3 1.0 0.8</diffuse>
+            <emissive>0.0 0.1 0.4 1.0</emissive></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wp4_marker">
+      <static>true</static><pose>10.0 6.0 0.005 0 0 0</pose>
+      <link name="link">
+        <visual name="v"><geometry><cylinder><radius>0.3</radius><length>0.01</length></cylinder></geometry>
+          <material><ambient>0.0 0.3 1.0 0.8</ambient><diffuse>0.0 0.3 1.0 0.8</diffuse>
+            <emissive>0.0 0.1 0.4 1.0</emissive></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ── Goal marker (green disc) ───────────────────────── -->
+
+    <model name="goal_marker">
+      <static>true</static><pose>10.0 9.5 0.005 0 0 0</pose>
+      <link name="link">
+        <visual name="v"><geometry><cylinder><radius>0.5</radius><length>0.01</length></cylinder></geometry>
+          <material><ambient>0.0 0.9 0.2 0.9</ambient><diffuse>0.0 0.9 0.2 0.9</diffuse>
+            <emissive>0.0 0.4 0.1 1.0</emissive></material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>
