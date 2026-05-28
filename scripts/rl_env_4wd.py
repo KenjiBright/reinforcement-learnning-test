@@ -246,7 +246,7 @@ class Gazebo4WDEnv(gym.Env):
 
         # 3. Wall proximity penalty
         if min_d < 1.0:
-            reward -= (1.0 - min_d) * 0.3
+            reward -= (1.0 - min_d) * 0.8
 
         # 4. Collision (immunity for first 30 steps after reset)
         if self._step > 30 and min_d < 0.35:

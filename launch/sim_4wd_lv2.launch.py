@@ -14,6 +14,10 @@ def _clean_urdf(xacro_file: str) -> str:
     return raw
 
 def generate_launch_description():
+    # Force localhost-only DDS to prevent multicast "Network is unreachable" errors
+    os.environ.setdefault('ROS_LOCALHOST_ONLY', '1')
+    os.environ.setdefault('ROS_DOMAIN_ID', '42')
+
     base_path  = os.path.expanduser('~/Desktop/my_4ws_robot')
     xacro_file = os.path.join(base_path, 'urdf', 'robot_4wd.urdf.xacro')
     world_file = os.path.join(base_path, 'worlds', 'maze_4wd_lv2.world')

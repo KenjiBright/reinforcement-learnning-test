@@ -7,6 +7,11 @@ Usage
 """
 
 import os
+
+# Prevent ROS2 DDS multicast "Network is unreachable" after long runs
+os.environ.setdefault('ROS_LOCALHOST_ONLY', '1')
+os.environ.setdefault('ROS_DOMAIN_ID', '42')
+
 import argparse
 import time
 import rclpy
@@ -22,12 +27,16 @@ def main():
     parser.add_argument("--level",    type=int, default=1, choices=[1, 2, 3])
     parser.add_argument("--episodes", type=int, default=0,
                         help="Number of episodes to run (0 = run until Ctrl+C)")
+    parser.add_argument("--model",    type=str, default=None,
+                        help="Path to model zip (default: brain_lv<level>_4wd.zip)")
+    parser.add_argument("--vecnorm",  type=str, default=None,
+                        help="Path to VecNormalize pkl (default: checkpoints_4wd/lv<level>/vecnorm_latest.pkl)")
     args = parser.parse_args()
 
     level = args.level
 
-    model_path     = f"brain_lv{level}_4wd.zip"
-    vecnorm_path   = os.path.join(f"./checkpoints_4wd/lv{level}", "vecnorm_latest.pkl")
+    model_path     = args.model   if args.model   else f"brain_lv{level}_4wd.zip"
+    vecnorm_path   = args.vecnorm if args.vecnorm else os.path.join(f"./checkpoints_4wd/lv{level}", "vecnorm_latest.pkl")
 
     # ── Validate files ──
     if not os.path.exists(model_path):

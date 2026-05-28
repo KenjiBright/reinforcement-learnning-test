@@ -12,6 +12,10 @@ Curriculum
 """
 
 import os
+
+# Prevent ROS2 DDS multicast "Network is unreachable" after long training runs
+os.environ.setdefault('ROS_LOCALHOST_ONLY', '1')
+os.environ.setdefault('ROS_DOMAIN_ID', '42')
 import argparse
 import rclpy
 
@@ -24,7 +28,7 @@ from rl_env_4wd import Gazebo4WDEnv
 
 DEFAULTS = {
     1: {"steps": 500_000,   "lr": 3e-4},
-    2: {"steps": 1_000_000, "lr": 3e-4},
+    2: {"steps": 1_000_000, "lr": 1e-4},
     3: {"steps": 2_000_000, "lr": 1e-4},
 }
 
