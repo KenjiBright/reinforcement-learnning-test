@@ -41,8 +41,8 @@ LEVELS = {
     },
     2: {
         "name"      : "L-Shape (Lv2)",
-        "waypoints" : [[4.0, 0.0], [8.0, 0.0], [10.0, 2.5], [10.0, 6.0], [10.0, 9.5]],
-        "goal_idx"  : 4,
+        "waypoints" : [[4.0, 0.0], [7.5, 0.0], [9.5, 0.5], [10.0, 3.0], [10.0, 6.0], [10.0, 9.5]],
+        "goal_idx"  : 5,
         "spawn_x"   : (-2.0,  3.0),
         "spawn_y"   : (-1.5,  1.5),
         "oob"       : (-3.0, 13.0, -3.0, 13.0),
@@ -214,10 +214,14 @@ class Gazebo4WSEnvV2(gym.Env):
         with self._lock:
             lidar = self._lidar.copy()
             pos   = self._pos.copy()
+            yaw   = self._yaw
         min_d = float(np.min(lidar))
 
         target = np.array(self.cfg["waypoints"][self._wp_idx])
-        dist   = float(np.linalg.norm(pos - target))
+        dx, dy = target[0] - pos[0], target[1] - pos[1]
+        dist   = float(np.hypot(dx, dy))
+        angle  = np.arctan2(dy, dx)
+        herr   = np.arctan2(np.sin(angle - yaw), np.cos(angle - yaw))
 
         # ── Reward ──
         reward = 0.0
@@ -225,8 +229,13 @@ class Gazebo4WSEnvV2(gym.Env):
         trunc  = False
         info   = {"wp": self._wp_idx, "end_reason": None}
 
-        # 1. Progress toward current WP
-        reward += (self._prev_dist - dist) * 5.0
+        # 1. Progress toward current WP — only reward forward-aligned progress
+        align = float(np.cos(herr))
+        reward += (self._prev_dist - dist) * 5.0 * max(0.0, align)
+
+        # 1b. Penalise reverse driving
+        if self._speed < -0.05:
+            reward -= abs(self._speed) * 4.0
 
         # 2. Time penalty
         reward -= 0.05
@@ -276,7 +285,7 @@ class Gazebo4WSEnvV2(gym.Env):
                         flush=True,
                     )
                     new_tgt = np.array(self.cfg["waypoints"][self._wp_idx])
-                    dist = float(np.linalg.norm(pos - new_tgt))
+                    dist = float(np.hypot(new_tgt[0] - pos[0], new_tgt[1] - pos[1]))
                 else:
                     reward += 200.0
                     done = True

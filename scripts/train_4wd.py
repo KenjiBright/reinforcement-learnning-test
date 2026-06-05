@@ -54,6 +54,10 @@ def main():
     parser.add_argument("--level", type=int, default=1, choices=[1, 2, 3])
     parser.add_argument("--steps", type=int, default=0,
                         help="Total timesteps (0 = use level default)")
+    parser.add_argument("--transfer", type=str, default=None,
+                        help="Model zip to transfer weights from (curriculum learning, e.g. brain_lv2_4wd.zip)")
+    parser.add_argument("--transfer-vecnorm", type=str, default=None, dest="transfer_vecnorm",
+                        help="VecNormalize pkl from the transfer source (keeps calibrated obs stats)")
     args = parser.parse_args()
 
     level       = args.level
@@ -73,28 +77,54 @@ def main():
     raw_env = Gazebo4WDEnv(level=level)
     vec_env = DummyVecEnv([lambda: Monitor(raw_env)])
 
+    custom_objs = {
+        "learning_rate": lr,
+        "n_steps"      : 2048,
+        "batch_size"   : 64,
+        "n_epochs"     : 10,
+        "ent_coef"     : ent_coef,
+        "vf_coef"      : 0.5,
+        "clip_range"   : 0.2,
+        "clip_range_vf": None,
+        "max_grad_norm": 0.5,
+    }
+
+    reset_timesteps = False
+
     if os.path.exists(model_path) and os.path.exists(vecnorm_latest):
+        # ── Resume same level ──
         print(f"\n[INFO] Resuming Level {level} from {model_path} …")
         vec_env = VecNormalize.load(vecnorm_latest, vec_env)
         vec_env.training    = True
         vec_env.norm_reward = True
-        model = PPO.load(
-            model_path, env=vec_env,
-            tensorboard_log=log_dir,
-            custom_objects={
-                "learning_rate": lr,
-                "n_steps"      : 2048,
-                "batch_size"   : 64,
-                "n_epochs"     : 10,
-                "ent_coef"     : ent_coef,
-                "vf_coef"      : 0.5,
-                "clip_range"   : 0.2,
-                "clip_range_vf": None,
-                "max_grad_norm": 0.5,
-            },
-        )
+        model = PPO.load(model_path, env=vec_env,
+                         tensorboard_log=log_dir, custom_objects=custom_objs)
         print(f"[INFO] Continuing from timestep {model.num_timesteps:,}")
+
+    elif args.transfer and os.path.exists(args.transfer):
+        # ── Curriculum transfer: load policy weights, optionally carry over vecnorm ──
+        print(f"\n[INFO] Curriculum transfer Level {level} from {args.transfer} …")
+        if args.transfer_vecnorm and os.path.exists(args.transfer_vecnorm):
+            print(f"[INFO] Loading source VecNormalize from {args.transfer_vecnorm}")
+            vec_env = VecNormalize.load(args.transfer_vecnorm, vec_env)
+            vec_env.training    = True
+            vec_env.norm_reward = True
+        else:
+            vec_env = VecNormalize(
+                vec_env,
+                norm_obs=True, norm_reward=True,
+                clip_obs=10.0, clip_reward=10.0,
+                gamma=0.99,
+            )
+        model = PPO.load(args.transfer, env=vec_env,
+                         tensorboard_log=log_dir, custom_objects=custom_objs)
+        model.num_timesteps = 0
+        model._episode_num  = 0
+        reset_timesteps     = True
+        print(f"[INFO] Weights transferred — starting Level {level} from step 0")
+
     else:
+        # ── Fresh training ──
         print(f"\n[INFO] Fresh Level {level} training — {total_steps:,} steps")
         vec_env = VecNormalize(
             vec_env,
@@ -120,6 +150,7 @@ def main():
             tensorboard_log= log_dir,
             policy_kwargs  = {"net_arch": [128, 128]},
         )
+        reset_timesteps = True
 
     checkpoint_cb = CheckpointCallback(
         save_freq   = 50_000,
@@ -137,7 +168,7 @@ def main():
     try:
         model.learn(
             total_timesteps     = total_steps,
-            reset_num_timesteps = False,
+            reset_num_timesteps = reset_timesteps,
             callback            = [checkpoint_cb, vecnorm_cb],
             progress_bar        = False,
         )

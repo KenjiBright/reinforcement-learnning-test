@@ -56,12 +56,12 @@ LEVELS = {
     },
     3: {
         "name"      : "U-Shape (Lv3)",
-        "waypoints" : [[3.0, 0.0], [7.0, 0.0], [10.0, 2.5],
-                       [10.0, 5.0], [10.0, 8.5], [9.0, 10.0],
-                       [4.0, 10.0], [0.0, 10.0]],
-        "goal_idx"  : 7,
+        "waypoints" : [[3.0, 0.0], [7.0, 0.0], [9.5, 2.5],
+                       [9.5, 5.0], [9.5, 8.0], [9.5, 10.0],
+                       [6.0, 10.0], [2.0, 10.0], [0.0, 10.0]],
+        "goal_idx"  : 8,
         "spawn_x"   : (-2.0,  3.5),
-        "spawn_y"   : (-1.5,  1.5),
+        "spawn_y"   : (-1.0,  1.0),
         "oob"       : (-3.0, 13.0, -3.0, 13.0),
         "timeout"   : 8000,
     },
@@ -225,12 +225,28 @@ class Gazebo4WDEnv(gym.Env):
 
         # Snapshot
         with self._lock:
-            lidar = self._lidar.copy()
-            pos   = self._pos.copy()
+            lidar   = self._lidar.copy()
+            pos     = self._pos.copy()
+            yaw     = self._yaw
+            speed   = self._speed
+            ang_vel = self._ang_vel
         min_d = float(np.min(lidar))
 
         target = np.array(self.cfg["waypoints"][self._wp_idx])
         dist   = float(np.linalg.norm(pos - target))
+
+        # ── Position tracker: log every 20 steps when past WP3 ──
+        if self._wp_idx >= 4 and self._step % 20 == 0:
+            yaw_deg = np.degrees(yaw)
+            print(
+                f"[TRACK ep={self._episode} step={self._step:5d}] "
+                f"pos=({pos[0]:.2f},{pos[1]:.2f}) "
+                f"yaw={yaw_deg:+.1f}° "
+                f"v={speed:+.2f}m/s ω={ang_vel:+.2f}r/s "
+                f"wp={self._wp_idx}/8 dist={dist:.2f} "
+                f"min_lidar={min_d:.2f}",
+                flush=True,
+            )
 
         # ── Reward ──
         reward = 0.0
@@ -238,15 +254,31 @@ class Gazebo4WDEnv(gym.Env):
         trunc  = False
         info   = {"wp": self._wp_idx, "end_reason": None}
 
+        # Heading error to current waypoint
+        dx, dy = target[0] - pos[0], target[1] - pos[1]
+        angle  = np.arctan2(dy, dx)
+        herr   = np.arctan2(np.sin(angle - yaw), np.cos(angle - yaw))
+
         # 1. Progress toward current waypoint
         reward += (self._prev_dist - dist) * 5.0
 
-        # 2. Time penalty
+        # 2. Heading alignment — reward facing the waypoint every step
+        reward += float(np.cos(herr)) * 0.5
+
+        # 3. Time penalty
         reward -= 0.05
 
         # 3. Wall proximity penalty
         if min_d < 1.0:
             reward -= (1.0 - min_d) * 0.8
+
+        # 4a. Anti-reverse penalty — stronger in upper corridor where west turn is needed
+        with self._lock:
+            speed_now = self._speed
+        if speed_now < -0.1:
+            # Heavier penalty when above y>4 (right corridor / top corridor)
+            rev_penalty = 1.0 if pos[1] > 4.0 else 0.2
+            reward -= rev_penalty
 
         # 4. Collision (immunity for first 30 steps after reset)
         if self._step > 30 and min_d < 0.35:
@@ -279,7 +311,9 @@ class Gazebo4WDEnv(gym.Env):
             accept_r = 0.8 if self._wp_idx == self.cfg["goal_idx"] else 0.8
             if dist < accept_r:
                 if self._wp_idx < self.cfg["goal_idx"]:
-                    reward += 10.0
+                    # Scale waypoint reward: later waypoints (the U-turn) give bigger bonus
+                    wp_bonus = 10.0 + self._wp_idx * 5.0
+                    reward += wp_bonus
                     self._wp_idx += 1
                     info["wp"] = self._wp_idx
                     print(
