@@ -31,6 +31,8 @@ def main():
                         help="Path to model zip (default: brain_lv<level>_4wd.zip)")
     parser.add_argument("--vecnorm",  type=str, default=None,
                         help="Path to VecNormalize pkl (default: checkpoints_4wd/lv<level>/vecnorm_latest.pkl)")
+    parser.add_argument("--stochastic", action="store_true",
+                        help="Use stochastic actions instead of deterministic (adds exploration noise)")
     args = parser.parse_args()
 
     level = args.level
@@ -61,6 +63,7 @@ def main():
     model = PPO.load(model_path, env=vec_env, device="cpu")
     print(f"\n[INFO] Loaded  {model_path}  (timestep {model.num_timesteps:,})")
     print(f"[INFO] Level {level} — {'run forever' if args.episodes == 0 else f'{args.episodes} episodes'}")
+    print(f"[INFO] Action mode: {'stochastic' if args.stochastic else 'deterministic'}")
     print("[INFO] Press Ctrl+C to stop.\n")
 
     # ── Run loop ──
@@ -71,7 +74,7 @@ def main():
 
     try:
         while True:
-            action, _ = model.predict(obs, deterministic=True)
+            action, _ = model.predict(obs, deterministic=not args.stochastic)
             obs, reward, done, info = vec_env.step(action)
             ep_reward += float(reward[0])
 

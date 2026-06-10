@@ -292,7 +292,7 @@ class Gazebo4WDEnv(gym.Env):
 
         # 6. Waypoint / Goal reached
         if not done:
-            accept_r = 0.8 if self._wp_idx == self.cfg["goal_idx"] else 1.2
+            accept_r = 1.0 if self._wp_idx == self.cfg["goal_idx"] else 1.2
             if dist < accept_r:
                 if self._wp_idx < self.cfg["goal_idx"]:
                     reward += 10.0
