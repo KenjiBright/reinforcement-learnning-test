@@ -47,12 +47,12 @@ LEVELS = {
     },
     2: {
         "name"      : "L-Shape (Lv2)",
-        "waypoints" : [[4.0, 0.0], [8.0, 0.0], [10.0, 0.0], [10.0, 1.2], [10.0, 2.5], [10.0, 6.0], [10.0, 9.5]],
-        "goal_idx"  : 6,
+        "waypoints" : [[4.0, 0.0], [8.0, 0.0], [10.0, 2.5], [10.0, 6.0], [10.0, 9.5]],
+        "goal_idx"  : 4,
         "spawn_x"   : (-2.0,  3.0),
         "spawn_y"   : (-1.5,  1.5),
         "oob"       : (-3.0, 13.0, -3.0, 13.0),
-        "timeout"   : 8000,
+        "timeout"   : 6000,
     },
     3: {
         "name"      : "U-Shape (Lv3)",
@@ -254,31 +254,15 @@ class Gazebo4WDEnv(gym.Env):
         trunc  = False
         info   = {"wp": self._wp_idx, "end_reason": None}
 
-        # Heading error to current waypoint
-        dx, dy = target[0] - pos[0], target[1] - pos[1]
-        angle  = np.arctan2(dy, dx)
-        herr   = np.arctan2(np.sin(angle - yaw), np.cos(angle - yaw))
-
         # 1. Progress toward current waypoint
         reward += (self._prev_dist - dist) * 5.0
 
-        # 2. Heading alignment — reward facing the waypoint every step
-        reward += float(np.cos(herr)) * 0.5
-
-        # 3. Time penalty
+        # 2. Time penalty
         reward -= 0.05
 
         # 3. Wall proximity penalty
         if min_d < 1.0:
-            reward -= (1.0 - min_d) * 0.8
-
-        # 4a. Anti-reverse penalty — stronger in upper corridor where west turn is needed
-        with self._lock:
-            speed_now = self._speed
-        if speed_now < -0.1:
-            # Heavier penalty when above y>4 (right corridor / top corridor)
-            rev_penalty = 1.0 if pos[1] > 4.0 else 0.2
-            reward -= rev_penalty
+            reward -= (1.0 - min_d) * 0.3
 
         # 4. Collision (immunity for first 30 steps after reset)
         if self._step > 30 and min_d < 0.35:
@@ -308,12 +292,10 @@ class Gazebo4WDEnv(gym.Env):
 
         # 6. Waypoint / Goal reached
         if not done:
-            accept_r = 0.8 if self._wp_idx == self.cfg["goal_idx"] else 0.8
+            accept_r = 0.8 if self._wp_idx == self.cfg["goal_idx"] else 1.2
             if dist < accept_r:
                 if self._wp_idx < self.cfg["goal_idx"]:
-                    # Scale waypoint reward: later waypoints (the U-turn) give bigger bonus
-                    wp_bonus = 10.0 + self._wp_idx * 5.0
-                    reward += wp_bonus
+                    reward += 10.0
                     self._wp_idx += 1
                     info["wp"] = self._wp_idx
                     print(
@@ -328,6 +310,7 @@ class Gazebo4WDEnv(gym.Env):
                     reward += 200.0
                     done = True
                     info["end_reason"] = "goal"
+                    self._publish_stop()
                     print(
                         f"[Ep {self._episode:4d}|step {self._step:5d}]  GOAL    "
                         f"pos=({pos[0]:.1f},{pos[1]:.1f})  "
