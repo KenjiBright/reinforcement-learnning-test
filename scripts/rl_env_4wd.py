@@ -80,11 +80,13 @@ class Gazebo4WDEnv(gym.Env):
     metadata = {"render_modes": []}
 
     # ──────────────── init ────────────────
-    def __init__(self, level: int = 1):
+    def __init__(self, level: int = 1, rtf: float = 3.0):
         super().__init__()
         assert level in LEVELS, f"level must be 1, 2 or 3 — got {level}"
         self.cfg   = LEVELS[level]
         self.level = level
+        # step sleep = target 0.006 s sim-time per step / actual RTF
+        self._step_sleep = 0.006 / rtf
 
         # Action: [linear ∈ [-1,1], angular ∈ [-1,1]]
         self.action_space = spaces.Box(
@@ -220,7 +222,7 @@ class Gazebo4WDEnv(gym.Env):
                       self._cmd_left, self._cmd_right]
         self._wheel_pub.publish(w_msg)
 
-        time.sleep(0.002)
+        time.sleep(self._step_sleep)
         self._step += 1
 
         # Snapshot

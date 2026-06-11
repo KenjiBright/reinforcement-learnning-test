@@ -33,6 +33,9 @@ def main():
                         help="Path to VecNormalize pkl (default: checkpoints_4wd/lv<level>/vecnorm_latest.pkl)")
     parser.add_argument("--stochastic", action="store_true",
                         help="Use stochastic actions instead of deterministic (adds exploration noise)")
+    parser.add_argument("--rtf", type=float, default=3.0,
+                        help="Gazebo real_time_factor (default 3.0 = training machine). "
+                             "Use 1.0 on Jetson Xavier or any machine that cannot sustain RTF>1.")
     args = parser.parse_args()
 
     level = args.level
@@ -53,7 +56,7 @@ def main():
     rclpy.init()
 
     # ── Build env (must match training setup) ──
-    raw_env = Gazebo4WDEnv(level=level)
+    raw_env = Gazebo4WDEnv(level=level, rtf=args.rtf)
     vec_env = DummyVecEnv([lambda: raw_env])
     vec_env = VecNormalize.load(vecnorm_path, vec_env)
     vec_env.training    = False   # freeze running stats
@@ -63,6 +66,7 @@ def main():
     model = PPO.load(model_path, env=vec_env, device="cpu")
     print(f"\n[INFO] Loaded  {model_path}  (timestep {model.num_timesteps:,})")
     print(f"[INFO] Level {level} — {'run forever' if args.episodes == 0 else f'{args.episodes} episodes'}")
+    print(f"[INFO] RTF={args.rtf}  step_sleep={0.006/args.rtf*1000:.1f} ms")
     print(f"[INFO] Action mode: {'stochastic' if args.stochastic else 'deterministic'}")
     print("[INFO] Press Ctrl+C to stop.\n")
 
