@@ -68,7 +68,7 @@ def main():
     ckpt_dir       = f"./checkpoints_4wd/lv{level}/"
     log_dir        = f"./logs_4wd/lv{level}/"
     vecnorm_latest = os.path.join(ckpt_dir, "vecnorm_latest.pkl")
-    ent_coef       = 0.0 if level == 1 else 0.01
+    ent_coef       = 0.0 if level == 1 else 0.02
     os.makedirs(ckpt_dir, exist_ok=True)
     os.makedirs(log_dir,  exist_ok=True)
 
