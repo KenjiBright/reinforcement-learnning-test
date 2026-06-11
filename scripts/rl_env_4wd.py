@@ -29,6 +29,7 @@ import rclpy
 from sensor_msgs.msg import LaserScan
 from nav_msgs.msg import Odometry
 from std_msgs.msg import Float64MultiArray
+from geometry_msgs.msg import Twist
 from std_srvs.srv import Empty
 from rclpy.qos import qos_profile_sensor_data
 
@@ -80,11 +81,12 @@ class Gazebo4WDEnv(gym.Env):
     metadata = {"render_modes": []}
 
     # ──────────────── init ────────────────
-    def __init__(self, level: int = 1, rtf: float = 3.0):
+    def __init__(self, level: int = 1, rtf: float = 3.0, use_cmdvel: bool = False):
         super().__init__()
         assert level in LEVELS, f"level must be 1, 2 or 3 — got {level}"
-        self.cfg   = LEVELS[level]
-        self.level = level
+        self.cfg         = LEVELS[level]
+        self.level       = level
+        self._use_cmdvel = use_cmdvel
         # step sleep = target 0.006 s sim-time per step / actual RTF
         self._step_sleep = 0.006 / rtf
 
@@ -103,10 +105,14 @@ class Gazebo4WDEnv(gym.Env):
         self._node = rclpy.create_node(f"rl_env_4wd_lv{level}")
         self._lock = threading.Lock()
 
-        # 4WD has only one controller topic
-        self._wheel_pub = self._node.create_publisher(
-            Float64MultiArray, "/wheel_controller/commands", 10
-        )
+        # Drive publisher — Float64MultiArray for desktop (ros2_control),
+        # Twist on /cmd_vel for Xavier (gazebo_ros_diff_drive)
+        if use_cmdvel:
+            self._wheel_pub = self._node.create_publisher(Twist, "/cmd_vel", 10)
+        else:
+            self._wheel_pub = self._node.create_publisher(
+                Float64MultiArray, "/wheel_controller/commands", 10
+            )
         self._node.create_subscription(
             LaserScan, "/scan", self._scan_cb, qos_profile_sensor_data
         )
@@ -195,9 +201,12 @@ class Gazebo4WDEnv(gym.Env):
 
     # ──────────────── Action helpers ────────────────
     def _publish_stop(self):
-        stop = Float64MultiArray()
-        stop.data = [0.0, 0.0, 0.0, 0.0]
-        self._wheel_pub.publish(stop)
+        if self._use_cmdvel:
+            self._wheel_pub.publish(Twist())
+        else:
+            stop = Float64MultiArray()
+            stop.data = [0.0, 0.0, 0.0, 0.0]
+            self._wheel_pub.publish(stop)
 
     # ──────────────── Step ────────────────
     def step(self, action):
@@ -212,15 +221,20 @@ class Gazebo4WDEnv(gym.Env):
         v_right_tgt = np.clip((v_lin + v_ang * TRACK_HALF) / WHEEL_RADIUS,
                                -MAX_WHEEL_VEL, MAX_WHEEL_VEL)
 
-        # Smooth wheel velocities
-        self._cmd_left  += np.clip(v_left_tgt  - self._cmd_left,  -SMOOTH_STEP, SMOOTH_STEP)
-        self._cmd_right += np.clip(v_right_tgt - self._cmd_right, -SMOOTH_STEP, SMOOTH_STEP)
-
-        # Publish [fl, fr, rl, rr]  (left=fl,rl  right=fr,rr)
-        w_msg = Float64MultiArray()
-        w_msg.data = [self._cmd_left, self._cmd_right,
-                      self._cmd_left, self._cmd_right]
-        self._wheel_pub.publish(w_msg)
+        if self._use_cmdvel:
+            # Xavier: publish Twist directly — diff_drive plugin handles kinematics
+            msg = Twist()
+            msg.linear.x  = float(np.clip(v_lin, -MAX_LIN, MAX_LIN))
+            msg.angular.z = float(np.clip(v_ang, -MAX_ANG, MAX_ANG))
+            self._wheel_pub.publish(msg)
+        else:
+            # Desktop: smooth wheel velocities and publish per-wheel rad/s
+            self._cmd_left  += np.clip(v_left_tgt  - self._cmd_left,  -SMOOTH_STEP, SMOOTH_STEP)
+            self._cmd_right += np.clip(v_right_tgt - self._cmd_right, -SMOOTH_STEP, SMOOTH_STEP)
+            w_msg = Float64MultiArray()
+            w_msg.data = [self._cmd_left, self._cmd_right,
+                          self._cmd_left, self._cmd_right]
+            self._wheel_pub.publish(w_msg)
 
         time.sleep(self._step_sleep)
         self._step += 1

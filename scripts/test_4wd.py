@@ -36,6 +36,9 @@ def main():
     parser.add_argument("--rtf", type=float, default=3.0,
                         help="Gazebo real_time_factor (default 3.0 = training machine). "
                              "Use 1.0 on Jetson Xavier or any machine that cannot sustain RTF>1.")
+    parser.add_argument("--use-cmdvel", action="store_true", dest="use_cmdvel",
+                        help="Publish Twist on /cmd_vel instead of Float64MultiArray "
+                             "(required on Xavier with gazebo_ros_diff_drive plugin)")
     args = parser.parse_args()
 
     level = args.level
@@ -56,7 +59,7 @@ def main():
     rclpy.init()
 
     # ── Build env (must match training setup) ──
-    raw_env = Gazebo4WDEnv(level=level, rtf=args.rtf)
+    raw_env = Gazebo4WDEnv(level=level, rtf=args.rtf, use_cmdvel=args.use_cmdvel)
     vec_env = DummyVecEnv([lambda: raw_env])
     vec_env = VecNormalize.load(vecnorm_path, vec_env)
     vec_env.training    = False   # freeze running stats
@@ -66,7 +69,8 @@ def main():
     model = PPO.load(model_path, env=vec_env, device="cpu")
     print(f"\n[INFO] Loaded  {model_path}  (timestep {model.num_timesteps:,})")
     print(f"[INFO] Level {level} — {'run forever' if args.episodes == 0 else f'{args.episodes} episodes'}")
-    print(f"[INFO] RTF={args.rtf}  step_sleep={0.006/args.rtf*1000:.1f} ms")
+    print(f"[INFO] RTF={args.rtf}  step_sleep={0.006/args.rtf*1000:.1f} ms  "
+          f"drive={'cmd_vel(Twist)' if args.use_cmdvel else 'wheel_controller(Float64)'}")
     print(f"[INFO] Action mode: {'stochastic' if args.stochastic else 'deterministic'}")
     print("[INFO] Press Ctrl+C to stop.\n")
 
